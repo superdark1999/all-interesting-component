@@ -1,5 +1,5 @@
 import { Progress } from "antd";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 const useAnimationFrame = (
   funcOnNextAnimateFrame: (deltaTime: number) => void,
@@ -41,18 +41,33 @@ const RapidClickingButton = ({
 
   const shouldRunAnimationFrame = percent > 0 && percent < 100;
 
-  useAnimationFrame((deltaTime: number) => {
-    setPercent((prevValue) => {
-      const delta = (deltaTime / countdownTime) * 100;
-      console.log("delta", delta);
-      let newPercent = prevValue - delta;
+  // useAnimationFrame((deltaTime: number) => {
+  //   setPercent((prevValue) => {
+  //     const delta = (deltaTime / countdownTime) * 100;
 
-      if (newPercent < 0) {
-        newPercent = 0;
-      }
-      return newPercent;
-    });
-  }, shouldRunAnimationFrame);
+  //     let newPercent = prevValue - delta;
+
+  //     if (newPercent < 0) {
+  //       newPercent = 0;
+  //     }
+  //     return newPercent;
+  //   });
+  // }, shouldRunAnimationFrame);
+  useEffect(() => {
+    const shouldRunAnimationFrame = percent > 0 && percent < 100;
+    let idInterval: any;
+    if (shouldRunAnimationFrame) {
+      idInterval = setInterval(() => {
+        console.log("set")
+        setPercent(percent - 5);
+    }, 100);
+    }
+
+   
+    return () => {
+      clearInterval(idInterval);
+    };
+  }, [percent]);
 
   return (
     <div className="main">
@@ -62,7 +77,7 @@ const RapidClickingButton = ({
         format={() => (
           <button
             onClick={() => {
-              setPercent((prevValue) => prevValue + 15);
+              setPercent((prevValue) => prevValue + 10);
             }}
           >
             {children}
