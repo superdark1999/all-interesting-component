@@ -1,16 +1,16 @@
+import "antd/dist/antd.css";
+import Input from "components/CustomInput/InputPassRef";
 import React from "react";
 import "./App.css";
-import "antd/dist/antd.css";
-import RapidClickingButton from "./components/RapidClickingButton/RapidClickingButton";
-import InfiniteScroll from 'components/InfiniteScroll/InfiniteScroll'
-import ClickOutsideButton from 'components/ClickOutside/ClickOutside'
 
 function App() {
   return (
     <div className="App">
-      <ClickOutsideButton />
+      {/* <ClickOutsideButton /> */}
       {/* <RapidClickingButton>ahihi</RapidClickingButton> */}
       {/* <InfiniteScroll/> */}
+      {/* <PreviousState /> */}
+      <Input />
     </div>
   );
 }
