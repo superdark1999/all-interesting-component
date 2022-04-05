@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useCallback } from "react";
 import useSearchBook from "./useSearchBook";
 
@@ -7,12 +6,15 @@ export default function InfiniteScrollRef() {
   const [pageNum, setPageNum] = useState(1);
   const { isLoading, error, books, hasMore } = useSearchBook(query, pageNum);
 
+  console.log("render");
   const observer: any = useRef();
   const lastBookElementRef = useCallback(
     (node) => {
+      console.log("node", node);
       if (isLoading) return;
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
+        console.log("entries", entries);
         if (entries[0].isIntersecting && hasMore) {
           setPageNum((prev) => prev + 1);
         }
@@ -28,7 +30,7 @@ export default function InfiniteScrollRef() {
   };
 
   return (
-    <div className="App">
+    <div className="main">
       <h1>Search Book</h1>
       <input type="text" onChange={handleChange} value={query} />
       {books.map((book, i) => {

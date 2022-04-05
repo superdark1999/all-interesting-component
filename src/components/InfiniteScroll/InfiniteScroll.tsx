@@ -1,7 +1,6 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import useFetch from './useFetch';
-import './index.scss'
-
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import useFetch from "./useFetch";
+import "./index.scss";
 
 export default function InfiniteScroll() {
   const [query, setQuery] = useState("");
@@ -15,7 +14,6 @@ export default function InfiniteScroll() {
 
   const handleObserver = useCallback((entries) => {
     const target = entries[0];
-    console.log("target", target)
     if (target.isIntersecting) {
       setPage((prev) => prev + 1);
     }
@@ -25,7 +23,7 @@ export default function InfiniteScroll() {
     const option = {
       root: null,
       rootMargin: "20px",
-      threshold: 0
+      threshold: 0,
     };
     const observer = new IntersectionObserver(handleObserver, option);
     if (loader.current) observer.observe(loader.current);
