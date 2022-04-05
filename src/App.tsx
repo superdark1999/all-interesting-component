@@ -7,6 +7,7 @@ import React from "react";
 import Navbar from "CssComponent/NavBar/Navbar";
 import "./App.css";
 import VirtualScroll from "components/VirtualScroll/VirtualScroll";
+import GridImage from "CssComponent/GridImage/GridImage";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       {/* <Input /> */}
       {/* <LazyLoading /> */}
       {/* <Navbar></Navbar> */}
-      <VirtualScroll />
+      {/* <VirtualScroll /> */}
+      <GridImage />
     </div>
   );
 }
