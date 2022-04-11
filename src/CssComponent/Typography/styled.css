@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@400;700&family=Lora:ital,wght@1,500&family=Roboto:ital,wght@1,100&display=swap");
+
+.container {
+  width: 100vh;
+  margin: 0 5rem;
+}
+
+.container .image {
+  background: url("../../../public/typography.jpg");
+  width: 100%;
+  height: 15rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+
+  /* background-color: green; */
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  font-family: "Anek Tamil", sans-serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+  }
+}

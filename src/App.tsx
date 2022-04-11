@@ -8,6 +8,8 @@ import Navbar from "CssComponent/NavBar/Navbar";
 import "./App.css";
 import VirtualScroll from "components/VirtualScroll/VirtualScroll";
 import GridImage from "CssComponent/GridImage/GridImage";
+import VirtualScrollHandMake from "components/VirtualScrollHandMake";
+import Typography from "CssComponent/Typography";
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
       {/* <LazyLoading /> */}
       {/* <Navbar></Navbar> */}
       {/* <VirtualScroll /> */}
-      <GridImage />
+      {/* <GridImage /> */}
+      {/* <VirtualScrollHandMake /> */}
+      <Typography />
     </div>
   );
 }
