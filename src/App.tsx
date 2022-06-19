@@ -10,7 +10,7 @@ import VirtualScroll from "components/VirtualScroll/VirtualScroll";
 import GridImage from "CssComponent/GridImage/GridImage";
 import VirtualScrollHandMake from "components/VirtualScrollHandMake";
 import Typography from "CssComponent/Typography";
-
+import MyCard from "CssComponent/MyCard/MyCard";
 function App() {
   return (
     <div className="App">
@@ -24,7 +24,8 @@ function App() {
       {/* <VirtualScroll /> */}
       {/* <GridImage /> */}
       {/* <VirtualScrollHandMake /> */}
-      <Typography />
+      {/* <Typography /> */}
+      <MyCard></MyCard>
     </div>
   );
 }
